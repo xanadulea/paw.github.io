@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open in PawAlert</title>
+    <script>
+        // Get animal ID from URL
+        const path = window.location.pathname;
+        const animalId = path.split('/').pop();
+        
+        // Deep link to app
+        const appUrl = `pawalert://animal/${animalId}`;
+        const playStoreUrl = "https://play.google.com/store/apps/details?id=com.yourname.pawmatch";
+        
+        // Try to open app
+        window.location.href = appUrl;
+        
+        // If app not installed, redirect to Play Store after 1 second
+        setTimeout(function() {
+            window.location.href = playStoreUrl;
+        }, 1000);
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+            background: #f8f9fa;
+            color: #1c1c1e;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #007AFF;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .animal {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+        .button {
+            background: #34C759;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .footer {
+            margin-top: 40px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 PawAlert</h1>
+        <div class="animal">
+            <p style="font-size: 18px;">🔗 Animal link received</p>
+            <p style="color: #666;">Opening in app...</p>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.yourname.pawmatch" class="button">
+            📲 Get PawAlert
+        </a>
+        <div class="footer">
+            Tap "Open in App" if app is already installed
+        </div>
+    </div>
+</body>
+</html>
