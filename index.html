@@ -103,6 +103,15 @@
             background: #d56e4a;
         }
         
+        .play-badge {
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
+        .play-badge img {
+            height: 60px;
+        }
+        
         /* PHOTO PLACEHOLDER */
         .photo-placeholder {
             width: 100%;
@@ -176,11 +185,26 @@
             font-weight: 600;
         }
         
-        .tester-number {
-            font-size: 48px;
-            color: #e67e5a;
-            font-weight: 600;
-            margin: 10px 0;
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .store-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #2d2d2d;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        
+        .store-button:hover {
+            background: #000;
         }
         
         .badge {
@@ -248,7 +272,7 @@
             <div class="nav">
                 <a href="#">Home</a>
                 <a href="#features">Features</a>
-                <a href="#status">Testing</a>
+                <a href="#download">Download</a>
             </div>
         </header>
 
@@ -256,7 +280,7 @@
             <div>
                 <h1>Help lost pets <span class="highlight">find their way</span> home</h1>
                 <p>Report a sighting in seconds. See them on the map. Connect with owners.</p>
-                <a href="#" class="button">Join the test →</a>
+                <a href="#" class="button">Download on Google Play</a>
             </div>
             <div class="photo-placeholder">
                 <img src="screenshot.jpg" alt="PawAlert app" onerror="this.style.display='none'; this.parentElement.innerHTML='📱<br>Your app screenshot'">
@@ -282,16 +306,16 @@
             </div>
         </div>
 
-        <div class="status" id="status">
-            <h2>Currently in <span class="highlight">closed testing</span></h2>
-            <div class="tester-number">12</div>
-            <p style="color: #666;">testers helping shape PawAlert</p>
-            <div style="margin-top: 20px;">
-                <span class="badge">Android</span>
-                <span class="badge">Kotlin</span>
-                <span class="badge">Firebase</span>
+        <div class="status" id="download">
+            <h2>Available now on <span class="highlight">Google Play</span></h2>
+            <div class="download-buttons">
+                <a href="#" class="store-button">📱 Download for Android</a>
             </div>
-            <p style="margin-top: 20px; color: #999; font-size: 13px;">Day 7 of 14</p>
+            <div style="margin-top: 20px;">
+                <span class="badge">Free</span>
+                <span class="badge">No account needed</span>
+                <span class="badge">Maps • Camera • Chat</span>
+            </div>
         </div>
 
         <div class="links">
