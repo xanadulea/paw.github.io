@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawAlert — A safe place for lost pets</title>
+    <title>PawAlert — Help lost pets find home</title>
     <style>
         * {
             margin: 0;
@@ -12,49 +12,16 @@
         }
         
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #fef7f2;
-            color: #4a4a4a;
-            line-height: 1.6;
-        }
-        
-        /* Warm gradient background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 30%, #ffd9c0, #fef7f2 60%);
-            z-index: -2;
-        }
-        
-        /* Soft floating particles */
-        .floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.15;
-            background: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23ff9f7c"/></svg>');
-            background-repeat: repeat;
-            animation: float 60s linear infinite;
-        }
-        
-        @keyframes float {
-            from { background-position: 0 0; }
-            to { background-position: 100% 100%; }
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #fffcf9;
+            color: #2d2d2d;
+            line-height: 1.5;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
-            position: relative;
         }
         
         /* HEADER */
@@ -63,139 +30,95 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 60px;
-            padding: 20px 30px;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 60px;
-            box-shadow: 0 10px 30px rgba(255, 140, 100, 0.1);
+            padding: 0 0 20px 0;
+            border-bottom: 2px solid #ffe8e0;
             flex-wrap: wrap;
         }
         
         .logo {
-            font-size: 36px;
-            font-weight: normal;
-            color: #9b6b5c;
-            font-family: 'Georgia', serif;
-            letter-spacing: -0.5px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #e67e5a;
         }
         
         .logo span {
-            color: #ff9f7c;
-            font-style: italic;
+            color: #4a4a4a;
+            font-weight: 300;
         }
         
         .nav a {
-            color: #9b6b5c;
+            color: #4a4a4a;
             text-decoration: none;
             margin-left: 30px;
             font-size: 16px;
-            transition: color 0.3s;
-            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-weight: 400;
         }
         
         .nav a:hover {
-            color: #ff9f7c;
-        }
-        
-        .nav a:first-child {
-            margin-left: 0;
+            color: #e67e5a;
         }
         
         /* HERO */
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
-            margin-bottom: 100px;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
-            padding: 40px;
-            border-radius: 60px;
-            box-shadow: 0 20px 40px rgba(255, 140, 100, 0.1);
+            margin-bottom: 80px;
         }
         
         .hero h1 {
-            font-size: 54px;
+            font-size: 48px;
             line-height: 1.2;
             margin-bottom: 20px;
-            color: #6b4f44;
-            font-weight: normal;
-            font-family: 'Georgia', serif;
+            color: #2d2d2d;
+            font-weight: 600;
         }
         
         .hero .highlight {
-            color: #ff9f7c;
-            font-style: italic;
+            color: #e67e5a;
         }
         
         .hero p {
             font-size: 18px;
-            color: #7f6b63;
+            color: #666;
             margin-bottom: 30px;
-            font-family: 'Helvetica', 'Arial', sans-serif;
         }
         
         .button {
             display: inline-block;
-            padding: 15px 45px;
-            background: #ff9f7c;
+            padding: 14px 40px;
+            background: #e67e5a;
             color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: normal;
-            font-size: 18px;
-            transition: all 0.3s;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 16px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(255, 140, 100, 0.3);
-            font-family: 'Helvetica', 'Arial', sans-serif;
+            box-shadow: 0 4px 10px rgba(230, 126, 90, 0.2);
         }
         
         .button:hover {
-            background: #ff8a5c;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(255, 140, 100, 0.4);
+            background: #d56e4a;
         }
         
-        /* PHONE MOCKUP */
-        .phone-wrapper {
-            position: relative;
+        /* PHOTO PLACEHOLDER */
+        .photo-placeholder {
             width: 100%;
-            max-width: 320px;
+            max-width: 300px;
             margin: 0 auto;
+            background: #f5f5f5;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
         }
         
-        .phone-frame {
-            background: #f9e5dd;
-            border-radius: 50px;
-            padding: 15px;
-            box-shadow: 0 30px 50px rgba(155, 107, 92, 0.2);
-        }
-        
-        .phone-screen {
-            background: #fff5f0;
-            border-radius: 40px;
-            overflow: hidden;
-            aspect-ratio: 9/19;
-            box-shadow: inset 0 0 20px rgba(155, 107, 92, 0.1);
-        }
-        
-        .phone-screen img {
+        .photo-placeholder img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            border-radius: 20px;
             display: block;
-        }
-        
-        .placeholder-screen {
-            background: linear-gradient(145deg, #ffede5, #ffe5d9);
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff9f7c;
-            font-size: 48px;
         }
         
         /* FEATURES */
@@ -203,149 +126,122 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
         }
         
         .feature-card {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
-            padding: 40px 30px;
-            border-radius: 40px;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 140, 100, 0.1);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.7);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255, 140, 100, 0.15);
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
         }
         
         .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 36px;
+            margin-bottom: 15px;
         }
         
         .feature-card h3 {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 10px;
-            color: #6b4f44;
-            font-weight: normal;
-            font-family: 'Georgia', serif;
+            color: #2d2d2d;
+            font-weight: 600;
         }
         
         .feature-card p {
-            color: #7f6b63;
-            font-size: 15px;
-            line-height: 1.6;
-            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
         }
         
-        /* TESTING STATUS */
+        /* STATUS */
         .status {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
-            padding: 60px 40px;
-            border-radius: 60px;
+            background: #faf4f0;
+            padding: 40px;
+            border-radius: 30px;
             text-align: center;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 40px rgba(255, 140, 100, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            margin-bottom: 50px;
         }
         
         .status h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #6b4f44;
-            font-weight: normal;
-            font-family: 'Georgia', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #2d2d2d;
+            font-weight: 500;
         }
         
         .status .highlight {
-            color: #ff9f7c;
-            font-style: italic;
+            color: #e67e5a;
+            font-weight: 600;
         }
         
-        .tester-count {
-            font-size: 64px;
-            color: #ff9f7c;
-            margin: 20px 0;
-            font-weight: normal;
-            line-height: 1;
-            font-family: 'Georgia', serif;
+        .tester-number {
+            font-size: 48px;
+            color: #e67e5a;
+            font-weight: 600;
+            margin: 10px 0;
         }
         
         .badge {
             display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-size: 14px;
-            margin: 0 5px;
-            background: rgba(255, 255, 255, 0.5);
-            color: #6b4f44;
-            border: 1px solid rgba(255, 159, 124, 0.3);
-            font-family: 'Helvetica', 'Arial', sans-serif;
+            padding: 6px 14px;
+            background: white;
+            border-radius: 30px;
+            font-size: 13px;
+            margin: 0 4px;
+            color: #666;
+            border: 1px solid #e0e0e0;
         }
         
-        /* LINKS SECTION */
+        /* LINKS */
         .links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             margin: 40px 0;
             flex-wrap: wrap;
         }
         
         .links a {
-            color: #9b6b5c;
+            color: #999;
             text-decoration: none;
             font-size: 14px;
-            transition: color 0.3s;
-            font-family: 'Helvetica', 'Arial', sans-serif;
         }
         
         .links a:hover {
-            color: #ff9f7c;
+            color: #e67e5a;
         }
         
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 40px 0;
-            color: #9b6b5c;
-            font-family: 'Helvetica', 'Arial', sans-serif;
-            font-size: 14px;
-            border-top: 1px solid rgba(155, 107, 92, 0.2);
+            padding: 30px 0;
+            color: #999;
+            font-size: 13px;
+            border-top: 1px solid #eee;
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding: 30px;
             }
             .features {
                 grid-template-columns: 1fr;
             }
             header {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
                 text-align: center;
             }
             .nav a {
                 margin: 0 10px;
             }
-            .hero h1 {
-                font-size: 40px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="floating-hearts"></div>
-    
     <div class="container">
         <header>
             <div class="logo">Paw<span>Alert</span></div>
@@ -353,64 +249,59 @@
                 <a href="#">Home</a>
                 <a href="#features">Features</a>
                 <a href="#status">Testing</a>
-                <a href="#">Contact</a>
             </div>
         </header>
 
         <div class="hero">
             <div>
-                <h1>A gentle place for <span class="highlight">lost pets</span> to find their way home</h1>
-                <p>No pressure, no rush. Just a warm community helping each other reunite with their furry friends.</p>
-                <a href="#" class="button">Join our testers →</a>
+                <h1>Help lost pets <span class="highlight">find their way</span> home</h1>
+                <p>Report a sighting in seconds. See them on the map. Connect with owners.</p>
+                <a href="#" class="button">Join the test →</a>
             </div>
-            <div class="phone-wrapper">
-                <div class="phone-frame">
-                    <div class="phone-screen">
-                        <div class="placeholder-screen">🐾</div>
-                    </div>
-                </div>
+            <div class="photo-placeholder">
+                <img src="screenshot.jpg" alt="PawAlert app" onerror="this.style.display='none'; this.parentElement.innerHTML='📱<br>Your app screenshot'">
+                <div style="display: none;">📱 App screenshot</div>
             </div>
         </div>
 
         <div class="features" id="features">
             <div class="feature-card">
                 <div class="feature-icon">🗺️</div>
-                <h3>Gentle Map</h3>
-                <p>See all reported animals in your area, with a soft touch and caring community.</p>
+                <h3>See on map</h3>
+                <p>All reported animals appear on a map. Lost, found, urgent — at a glance.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📸</div>
-                <h3>Simple Posting</h3>
-                <p>Take a photo and share. No account needed — everyone can help.</p>
+                <h3>Quick report</h3>
+                <p>Take a photo, drop a pin, post. No account needed to help.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💬</div>
-                <h3>Kind Chats</h3>
-                <p>Connect with owners through gentle conversations. No pressure, just caring.</p>
+                <h3>Connect</h3>
+                <p>Message owners directly when you find their pet.</p>
             </div>
         </div>
 
         <div class="status" id="status">
-            <h2>We're quietly <span class="highlight">testing</span> with friends</h2>
-            <div class="tester-count">12</div>
-            <p style="font-size: 18px; color: #7f6b63;">kind souls helping make PawAlert better</p>
-            <div style="margin-top: 30px;">
+            <h2>Currently in <span class="highlight">closed testing</span></h2>
+            <div class="tester-number">12</div>
+            <p style="color: #666;">testers helping shape PawAlert</p>
+            <div style="margin-top: 20px;">
                 <span class="badge">Android</span>
                 <span class="badge">Kotlin</span>
                 <span class="badge">Firebase</span>
-                <span class="badge">Maps</span>
             </div>
-            <p style="margin-top: 30px; color: #9b6b5c; font-size: 14px;">Day 7 of 14 — gently preparing for the world</p>
+            <p style="margin-top: 20px; color: #999; font-size: 13px;">Day 7 of 14</p>
         </div>
 
         <div class="links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
             <a href="app-ads.txt">app-ads.txt</a>
         </div>
 
         <footer>
-            <p>© 2026 PawAlert — with warmth, from our home to yours.</p>
+            <p>© 2026 PawAlert</p>
         </footer>
     </div>
 </body>
