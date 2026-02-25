@@ -1,0 +1,3 @@
+google.com, pub-3235745570223985, DIRECT, f08c47fec0942fa0
+unity3d.com, 6051715, DIRECT
+facebook.com, 1469531084694829, DIRECT
