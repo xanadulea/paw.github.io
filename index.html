@@ -1,8 +1,342 @@
 <!DOCTYPE html>
-<html>
-<head><title>PawAlert</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawAlert — Help lost pets find home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000000;
+            color: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #ff0000;
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        
+        .logo span {
+            color: #ff0000;
+        }
+        
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+        }
+        
+        .nav a:hover {
+            color: #ff0000;
+        }
+        
+        .nav a:first-child {
+            margin-left: 0;
+        }
+        
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero .red {
+            color: #ff0000;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .button:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        /* PHONE MOCKUP */
+        .phone-mockup {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        
+        .phone-frame {
+            background: #111;
+            border-radius: 40px;
+            padding: 10px;
+            border: 2px solid #333;
+            box-shadow: 0 20px 40px rgba(255,0,0,0.2);
+        }
+        
+        .phone-screen {
+            background: #000;
+            border-radius: 30px;
+            overflow: hidden;
+            aspect-ratio: 9/19;
+        }
+        
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .placeholder-screen {
+            background: #1a1a1a;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 48px;
+        }
+        
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .feature-card {
+            background: #111;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: #ff0000;
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .feature-card p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* TESTING STATUS */
+        .status {
+            background: #111;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            border: 1px solid #333;
+        }
+        
+        .status h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .status .highlight {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .tester-count {
+            font-size: 48px;
+            color: #ff0000;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin: 0 5px;
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+        }
+        
+        .badge.android { border-color: #ff0000; color: #ff0000; }
+        
+        /* LINKS SECTION */
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .links a:hover {
+            color: #ff0000;
+        }
+        
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            border-top: 1px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .nav a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
 <body>
-<h1>🐾 PawAlert</h1>
-<p>Deep links are at <a href="/paw.github.io/pawalert/animal/">/pawalert/animal/</a></p>
+    <div class="container">
+        <header>
+            <div class="logo">Paw<span>Alert</span></div>
+            <div class="nav">
+                <a href="#">Home</a>
+                <a href="#features">Features</a>
+                <a href="#status">Testing</a>
+            </div>
+        </header>
+
+        <div class="hero">
+            <div>
+                <h1>Help lost pets <span class="red">find their way</span> home</h1>
+                <p>Report sightings instantly, connect with owners, and make a difference in your community. No account needed to post.</p>
+                <a href="#" class="button">Join the test →</a>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <!-- REPLACE THIS WITH YOUR SCREENSHOT -->
+                        <div class="placeholder-screen">🐾</div>
+                        <!-- <img src="screenshot.jpg" alt="PawAlert app"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features" id="features">
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Real-time Map</h3>
+                <p>See all reported animals in your area instantly. Lost, found, urgent — all on one map.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>Quick Report</h3>
+                <p>Snap a photo and post in seconds. No account? No problem — you can still help.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Direct Chat</h3>
+                <p>Message owners directly when you find their pet. Fast, easy, private.</p>
+            </div>
+        </div>
+
+        <div class="status" id="status">
+            <h2>Currently in <span class="highlight">Closed Testing</span></h2>
+            <div class="tester-count">12</div>
+            <p>active testers helping make PawAlert better</p>
+            <div style="margin-top: 30px;">
+                <span class="badge android">Android</span>
+                <span class="badge android">Kotlin</span>
+                <span class="badge android">Firebase</span>
+                <span class="badge android">Maps</span>
+            </div>
+            <p style="margin-top: 30px; color: #999; font-size: 14px;">Day 7 of 14 — production release coming soon</p>
+        </div>
+
+        <div class="links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="app-ads.txt">app-ads.txt</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <footer>
+            <p>© 2026 PawAlert. Built with ❤️ for lost pets.</p>
+        </footer>
+    </div>
 </body>
 </html>
