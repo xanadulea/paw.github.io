@@ -24,7 +24,6 @@
             padding: 60px 30px;
         }
         
-        /* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -46,7 +45,6 @@
             text-decoration: none;
             margin-left: 35px;
             font-size: 16px;
-            font-weight: 400;
             transition: color 0.2s;
         }
         
@@ -58,7 +56,6 @@
             margin-left: 0;
         }
         
-        /* Hero */
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -73,7 +70,6 @@
             line-height: 1.2;
             margin-bottom: 20px;
             color: #0f2b4b;
-            letter-spacing: -0.5px;
         }
         
         .hero .highlight {
@@ -97,7 +93,6 @@
             font-weight: 500;
             font-size: 16px;
             transition: background 0.2s;
-            border: none;
             box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
         }
         
@@ -105,7 +100,6 @@
             background: #1d4ed8;
         }
         
-        /* Phone mockup */
         .phone-wrapper {
             width: 100%;
             max-width: 320px;
@@ -143,12 +137,11 @@
             background: #f1f5f9;
         }
         
-        /* Features */
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-bottom: 100px;
+            margin: 80px 0;
         }
         
         .feature {
@@ -156,7 +149,7 @@
         }
         
         .feature-icon {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 16px;
             color: #2563eb;
         }
@@ -173,12 +166,11 @@
             font-size: 15px;
         }
         
-        /* Stats */
         .stats {
             display: flex;
             justify-content: center;
             gap: 60px;
-            margin-bottom: 80px;
+            margin: 80px 0;
             flex-wrap: wrap;
         }
         
@@ -199,7 +191,28 @@
             letter-spacing: 0.5px;
         }
         
-        /* Download */
+        .testimonial {
+            background: #f8fafc;
+            padding: 60px 40px;
+            border-radius: 24px;
+            margin: 80px 0;
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-size: 20px;
+            color: #0f2b4b;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            font-style: normal;
+            line-height: 1.5;
+        }
+        
+        .testimonial-author {
+            color: #4b5563;
+            font-size: 15px;
+        }
+        
         .download {
             text-align: center;
             padding: 60px 0;
@@ -213,7 +226,6 @@
             color: #0f2b4b;
         }
         
-        /* Links */
         .links {
             display: flex;
             justify-content: center;
@@ -268,7 +280,7 @@
             <div class="logo">PawAlert</div>
             <div class="nav">
                 <a href="#">Home</a>
-                <a href="#">Features</a>
+                <a href="#">How it works</a>
                 <a href="#">Download</a>
             </div>
         </header>
@@ -282,7 +294,7 @@
             <div class="phone-wrapper">
                 <div class="phone-frame">
                     <div class="phone-screen">
-                        <div class="placeholder">🐾</div>
+                        <div class="placeholder">App preview</div>
                     </div>
                 </div>
             </div>
@@ -307,12 +319,12 @@
             <div class="feature">
                 <div class="feature-icon">🗺️</div>
                 <h3>Live Map</h3>
-                <p>See all reported animals in your area at a glance.</p>
+                <p>See all reported animals in your area. Lost, found, urgent — at a glance.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">📸</div>
                 <h3>Quick Report</h3>
-                <p>Take a photo, drop a pin, post. No account needed.</p>
+                <p>Take a photo, drop a pin, post. No account needed to help.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">💬</div>
@@ -321,8 +333,15 @@
             </div>
         </div>
 
+        <div class="testimonial">
+            <div class="testimonial-text">
+                "My dog went missing for three hours. Someone spotted her through PawAlert and messaged me within minutes. I can't thank them enough."
+            </div>
+            <div class="testimonial-author">— Sarah, Ljubljana</div>
+        </div>
+
         <div class="download">
-            <h2>Available now in closed testing</h2>
+            <h2>Currently in closed testing</h2>
             <a href="#" class="button">Join the test</a>
         </div>
 
