@@ -12,83 +12,116 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #ffffff;
-            color: #1d1d1f;
-            line-height: 1.5;
+            color: #1e293b;
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 30px;
         }
         
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 80px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 500;
-            color: #1d1d1f;
+            color: #0f2b4b;
+            letter-spacing: -0.3px;
         }
         
         .nav a {
-            color: #86868b;
+            color: #4b5563;
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 35px;
             font-size: 16px;
+            font-weight: 400;
+            transition: color 0.2s;
         }
         
+        .nav a:hover {
+            color: #2563eb;
+        }
+        
+        .nav a:first-child {
+            margin-left: 0;
+        }
+        
+        /* Hero */
         .hero {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
         }
         
         .hero h1 {
             font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-weight: 500;
             line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0f2b4b;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero .highlight {
+            color: #2563eb;
+            font-weight: 500;
         }
         
         .hero p {
             font-size: 18px;
-            color: #86868b;
-            margin-bottom: 40px;
+            color: #4b5563;
+            margin-bottom: 35px;
         }
         
         .button {
             display: inline-block;
-            padding: 14px 40px;
-            background: #1d1d1f;
+            padding: 14px 42px;
+            background: #2563eb;
             color: white;
             text-decoration: none;
             border-radius: 40px;
             font-weight: 500;
             font-size: 16px;
+            transition: background 0.2s;
+            border: none;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
         }
         
-        .phone-mockup {
-            max-width: 300px;
-            margin: 60px auto;
+        .button:hover {
+            background: #1d4ed8;
+        }
+        
+        /* Phone mockup */
+        .phone-wrapper {
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
         }
         
         .phone-frame {
-            background: #fff;
+            background: #ffffff;
             border-radius: 40px;
-            padding: 10px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 1px solid #f0f0f0;
+            padding: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e2e8f0;
         }
         
         .phone-screen {
-            background: #f9f9f9;
+            background: #f8fafc;
             border-radius: 32px;
             overflow: hidden;
             aspect-ratio: 9/19;
@@ -105,41 +138,126 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ccc;
+            color: #94a3b8;
             font-size: 48px;
+            background: #f1f5f9;
         }
         
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #2563eb;
+        }
+        
+        .feature h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #0f2b4b;
+        }
+        
+        .feature p {
+            color: #4b5563;
+            font-size: 15px;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 500;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #4b5563;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Download */
+        .download {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .download h2 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #0f2b4b;
+        }
+        
+        /* Links */
         .links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             margin: 40px 0;
+            flex-wrap: wrap;
         }
         
         .links a {
-            color: #86868b;
+            color: #64748b;
             text-decoration: none;
             font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .links a:hover {
+            color: #2563eb;
         }
         
         footer {
             text-align: center;
             padding: 30px 0;
-            color: #86868b;
+            color: #64748b;
             font-size: 13px;
-            border-top: 1px solid #f0f0f0;
+            border-top: 1px solid #e2e8f0;
         }
         
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 36px;
+        @media (max-width: 700px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .features {
+                grid-template-columns: 1fr;
             }
             header {
                 flex-direction: column;
-                gap: 20px;
+                text-align: center;
             }
             .nav a {
                 margin: 0 10px;
+            }
+            .stats {
+                gap: 30px;
             }
         }
     </style>
@@ -150,31 +268,72 @@
             <div class="logo">PawAlert</div>
             <div class="nav">
                 <a href="#">Home</a>
+                <a href="#">Features</a>
                 <a href="#">Download</a>
             </div>
         </header>
 
         <div class="hero">
-            <h1>Help lost pets find their way home</h1>
-            <p>Report a sighting. See them on the map. Connect with owners.</p>
-            <a href="#" class="button">Download on Google Play</a>
-        </div>
-
-        <div class="phone-mockup">
-            <div class="phone-frame">
-                <div class="phone-screen">
-                    <div class="placeholder">🐾</div>
+            <div>
+                <h1>Helping lost pets <span class="highlight">find their way</span> home</h1>
+                <p>Report a sighting in seconds. See them on a map. Connect with owners. Simple, fast, and free.</p>
+                <a href="#" class="button">Download on Google Play</a>
+            </div>
+            <div class="phone-wrapper">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="placeholder">🐾</div>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">ACTIVE TESTERS</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7</div>
+                <div class="stat-label">DAYS IN TESTING</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">21</div>
+                <div class="stat-label">REPORTS MADE</div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🗺️</div>
+                <h3>Live Map</h3>
+                <p>See all reported animals in your area at a glance.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📸</div>
+                <h3>Quick Report</h3>
+                <p>Take a photo, drop a pin, post. No account needed.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Direct Chat</h3>
+                <p>Message owners instantly when you find their pet.</p>
+            </div>
+        </div>
+
+        <div class="download">
+            <h2>Available now in closed testing</h2>
+            <a href="#" class="button">Join the test</a>
         </div>
 
         <div class="links">
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
+            <a href="app-ads.txt">app-ads.txt</a>
         </div>
 
         <footer>
-            <p>© 2026 PawAlert</p>
+            <p>© 2026 PawAlert — Helping pets find their way home</p>
         </footer>
     </div>
 </body>
