@@ -12,56 +12,44 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #ffffff;
             color: #1e293b;
-            line-height: 1.6;
         }
         
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 30px;
+            padding: 40px 20px;
         }
         
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             flex-wrap: wrap;
-            gap: 20px;
         }
         
         .logo {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 500;
             color: #0f2b4b;
-            letter-spacing: -0.3px;
         }
         
         .nav a {
             color: #4b5563;
             text-decoration: none;
-            margin-left: 35px;
+            margin-left: 30px;
             font-size: 16px;
-            transition: color 0.2s;
-        }
-        
-        .nav a:hover {
-            color: #2563eb;
-        }
-        
-        .nav a:first-child {
-            margin-left: 0;
         }
         
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
         }
         
         .hero h1 {
@@ -74,43 +62,36 @@
         
         .hero .highlight {
             color: #2563eb;
-            font-weight: 500;
         }
         
         .hero p {
-            font-size: 18px;
             color: #4b5563;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
+            font-size: 18px;
         }
         
         .button {
             display: inline-block;
-            padding: 14px 42px;
+            padding: 12px 36px;
             background: #2563eb;
             color: white;
             text-decoration: none;
             border-radius: 40px;
             font-weight: 500;
-            font-size: 16px;
-            transition: background 0.2s;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
         }
         
-        .button:hover {
-            background: #1d4ed8;
-        }
-        
-        .phone-wrapper {
+        /* Carousel */
+        .carousel-container {
             width: 100%;
             max-width: 320px;
             margin: 0 auto;
         }
         
         .phone-frame {
-            background: #ffffff;
+            background: white;
             border-radius: 40px;
             padding: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
             border: 1px solid #e2e8f0;
         }
         
@@ -121,96 +102,84 @@
             aspect-ratio: 9/19;
         }
         
-        .phone-screen img {
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .carousel-slide {
+            flex: 0 0 100%;
+            height: 100%;
+        }
+        
+        .carousel-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
         
-        .placeholder {
-            height: 100%;
+        .carousel-dots {
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: #94a3b8;
-            font-size: 48px;
-            background: #f1f5f9;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .dot.active {
+            background: #2563eb;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 500;
+            color: #2563eb;
+        }
+        
+        .stat-label {
+            color: #4b5563;
+            font-size: 14px;
         }
         
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin: 80px 0;
+            gap: 30px;
+            margin: 60px 0;
         }
         
         .feature {
             text-align: center;
         }
         
-        .feature-icon {
-            font-size: 28px;
-            margin-bottom: 16px;
-            color: #2563eb;
-        }
-        
         .feature h3 {
-            font-size: 20px;
-            font-weight: 500;
+            font-size: 18px;
             margin-bottom: 8px;
             color: #0f2b4b;
+            font-weight: 500;
         }
         
         .feature p {
             color: #4b5563;
-            font-size: 15px;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin: 80px 0;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 36px;
-            font-weight: 500;
-            color: #2563eb;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            color: #4b5563;
             font-size: 14px;
-            letter-spacing: 0.5px;
-        }
-        
-        .testimonial {
-            background: #f8fafc;
-            padding: 60px 40px;
-            border-radius: 24px;
-            margin: 80px 0;
-            text-align: center;
-        }
-        
-        .testimonial-text {
-            font-size: 20px;
-            color: #0f2b4b;
-            max-width: 700px;
-            margin: 0 auto 20px;
-            font-style: normal;
-            line-height: 1.5;
-        }
-        
-        .testimonial-author {
-            color: #4b5563;
-            font-size: 15px;
         }
         
         .download {
@@ -229,7 +198,7 @@
         .links {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             margin: 40px 0;
             flex-wrap: wrap;
         }
@@ -238,11 +207,6 @@
             color: #64748b;
             text-decoration: none;
             font-size: 14px;
-            transition: color 0.2s;
-        }
-        
-        .links a:hover {
-            color: #2563eb;
         }
         
         footer {
@@ -263,13 +227,10 @@
             }
             header {
                 flex-direction: column;
-                text-align: center;
+                gap: 15px;
             }
             .nav a {
                 margin: 0 10px;
-            }
-            .stats {
-                gap: 30px;
             }
         }
     </style>
@@ -288,56 +249,61 @@
         <div class="hero">
             <div>
                 <h1>Helping lost pets <span class="highlight">find their way</span> home</h1>
-                <p>Report a sighting in seconds. See them on a map. Connect with owners. Simple, fast, and free.</p>
+                <p>Report a sighting. See them on the map. Connect with owners.</p>
                 <a href="#" class="button">Download on Google Play</a>
             </div>
-            <div class="phone-wrapper">
+            
+            <div class="carousel-container">
                 <div class="phone-frame">
                     <div class="phone-screen">
-                        <div class="placeholder">App preview</div>
+                        <div class="carousel-slides" id="carouselSlides">
+                            <div class="carousel-slide">
+                                <img src="screen1.jpg" alt="Map view" onerror="this.style.backgroundColor='#f1f5f9'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="screen2.jpg" alt="Report form" onerror="this.style.backgroundColor='#f1f5f9'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="screen3.jpg" alt="Messages" onerror="this.style.backgroundColor='#f1f5f9'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="screen4.jpg" alt="Animal details" onerror="this.style.backgroundColor='#f1f5f9'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="screen5.jpg" alt="Profile" onerror="this.style.backgroundColor='#f1f5f9'">
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
                 </div>
             </div>
         </div>
 
         <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">12</div>
-                <div class="stat-label">ACTIVE TESTERS</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">7</div>
-                <div class="stat-label">DAYS IN TESTING</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">21</div>
-                <div class="stat-label">REPORTS MADE</div>
-            </div>
+            <div><span class="stat-number">12</span> <span class="stat-label">testers</span></div>
+            <div><span class="stat-number">7</span> <span class="stat-label">days</span></div>
+            <div><span class="stat-number">21</span> <span class="stat-label">reports</span></div>
         </div>
 
         <div class="features">
             <div class="feature">
-                <div class="feature-icon">🗺️</div>
                 <h3>Live Map</h3>
-                <p>See all reported animals in your area. Lost, found, urgent — at a glance.</p>
+                <p>See all reported animals at a glance</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">📸</div>
                 <h3>Quick Report</h3>
-                <p>Take a photo, drop a pin, post. No account needed to help.</p>
+                <p>Post in seconds, no account needed</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">💬</div>
                 <h3>Direct Chat</h3>
-                <p>Message owners instantly when you find their pet.</p>
+                <p>Message owners instantly</p>
             </div>
-        </div>
-
-        <div class="testimonial">
-            <div class="testimonial-text">
-                "My dog went missing for three hours. Someone spotted her through PawAlert and messaged me within minutes. I can't thank them enough."
-            </div>
-            <div class="testimonial-author">— Sarah, Ljubljana</div>
         </div>
 
         <div class="download">
@@ -352,8 +318,53 @@
         </div>
 
         <footer>
-            <p>© 2026 PawAlert — Helping pets find their way home</p>
+            <p>© 2026 PawAlert</p>
         </footer>
     </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector('.carousel-slides');
+        const dots = document.querySelectorAll('.dot');
+        
+        function updateSlide(index) {
+            slideIndex = index;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        
+        function currentSlide(index) {
+            updateSlide(index);
+        }
+        
+        // Auto advance every 3 seconds
+        setInterval(() => {
+            slideIndex = (slideIndex + 1) % 5;
+            updateSlide(slideIndex);
+        }, 3000);
+        
+        // Touch support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        slides.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        slides.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                // Swipe left
+                slideIndex = (slideIndex + 1) % 5;
+                updateSlide(slideIndex);
+            } else if (touchEndX - touchStartX > 50) {
+                // Swipe right
+                slideIndex = (slideIndex - 1 + 5) % 5;
+                updateSlide(slideIndex);
+            }
+        });
+    </script>
 </body>
 </html>
